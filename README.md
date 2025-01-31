@@ -1,5 +1,5 @@
 # Emoti'Diary (mood-tracker)
-Emoti’Diary is a web app designed to help you track your moods, log your emotions, and view mood statistics over time. It features mood selection with emoji, notes for each mood, a mood history, and language/theme options (light/dark). You can also export your mood history to a JSON file and clear your history when needed.
+Emoti’Diary is a web app designed to help you track your moods, log your emotions, and view mood statistics over time.
 ### Features
 - **Mood Logging**: Select your mood from a set of predefined moods (Happy, Neutral, Sad, Excited, Angry, Relaxed) and add a personal note.
 - **Statistics**: View your average mood, count of each mood logged, and other stats.
@@ -28,7 +28,7 @@ npm run serve
 ## Technologies Used
 - **Vue.js**: Framework for building the app.
 - **Bootstrap**: CSS framework for responsive design.
-- **Local Storage**: For saving mood history and theme settings.
+- **Local Storing**: For saving various useful informations.
 - **JSON**: For exporting and importing mood history.
 ## Contributing
 Feel free to fork this repository and submit issues or pull requests. If you'd like to add a new feature or improve the app, feel free to contribute!
