@@ -18,7 +18,7 @@ npm install
 ```
 ### Launch current build
 ```
-npm install serve
+npm install -g serve
 serve dist
 ```
 or to run from source:
