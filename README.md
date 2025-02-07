@@ -6,7 +6,7 @@ Emoti’Diary is a web app designed to help you track your moods, log your emoti
 - **History**: See your mood history with date and notes, with options to delete or export history.
 - **Language Support**: Switch between English and French.
 - **Light/Dark Themes**: Toggle between light and dark modes.
-- **Export Mood History**: Download your mood history as a JSON file for backup or further analysis.
+- **Export/Import Mood History**: Download (or import) your mood history as a JSON file for backup or further analysis.
 ## Installation and setup
 ### Cloning
 ```
