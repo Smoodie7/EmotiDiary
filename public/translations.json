@@ -10,7 +10,8 @@
         "clearAll": "Clear All",
         "confirmClear": "Are you sure you want to clear all history?",
         "yesClear": "Yes, Clear",
-        "exportJson": "Export as JSON"
+        "exportJson": "Export as JSON",
+        "importJson": "Import a JSON"
     },
     "fr": {
         "viewStats": "Voir les statistiques",
@@ -23,6 +24,7 @@
         "clearAll": "Tout effacer",
         "confirmClear": "Êtes-vous sûr de vouloir tout effacer?",
         "yesClear": "Oui, effacer",
-        "exportJson": "Exporter en JSON"
+        "exportJson": "Exporter en JSON",
+        "importJson": "Importer un JSON"
     }
 }
