@@ -73,10 +73,13 @@
         <!-- load more -->
         <button v-if="moodHistory.length > visibleCount" @click="showMoreHistory" class="btn btn-link mt-2">{{
           texts.showMore }}</button>
-
+        <!-- other butons -->
         <p v-else-if="moodHistory.length === 0" class="text-muted text-center mt-4">{{ texts.noMoods }}</p>
         <button @click="showClearPopup = true" class="btn btn-danger w-100 mt-5">{{ texts.clearAll }}</button>
-        <button @click="exportHistoryAsJson" class="btn btn-success w-100 mt-3">{{ texts.exportJson }}</button>
+        <div class="d-flex justify-content-between mt-3">
+          <button @click="exportHistoryAsJson" class="btn btn-success flex-grow-1 me-2">{{ texts.exportJson }}</button>
+          <button @click="importHistoryAsJson" class="btn btn-success flex-grow-1">{{ texts.importJson }}</button>
+        </div>
       </div>
     </div>
     <!-- Clear Confirm -->
@@ -143,6 +146,7 @@ export default {
     this.loadMoodHistory();
     this.calculateHappiness();
     this.autoSetTheme();
+    console.log("Loaded texts:", this.texts);
   },
   methods: {
     async loadTranslations() {
@@ -270,6 +274,37 @@ export default {
       } catch (error) {
         console.error("Error exporting JSON:", error);
         alert("Error exporting JSON:", error);
+      }
+    },
+    importHistoryAsJson() {
+      try {
+        const input = document.createElement('input');
+        input.type = 'file';
+        input.accept = '.json';
+        input.onchange = async (event) => {
+          const file = event.target.files[0];
+          if (!file) return alert("Error: No file selected.");
+
+          const reader = new FileReader();
+          reader.onload = async (event) => {
+            try {
+              const importedHistory = JSON.parse(event.target.result);
+              if (!Array.isArray(importedHistory)) return alert("Error: Invalid JSON format.");
+
+              this.moodHistory = importedHistory;
+              this.saveMoodHistory();
+              this.calculateHappiness();
+            } catch (error) {
+              console.error("Error importing JSON:", error);
+              alert("Error importing JSON:", error);
+            }
+          };
+          reader.readAsText(file);
+        };
+        input.click();
+      } catch (error) {
+        console.error("Error importing JSON:", error);
+        alert("Error importing JSON:", error);
       }
     }
   }
